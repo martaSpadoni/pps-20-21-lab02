@@ -12,4 +12,10 @@ object Neg extends App{
   val isFoo = (str: String) => str == "foo"
   println(neg(isFoo)("pippo")) //true
   println(neg(isFoo)("foo")) //false
+
+  def negMethod (pred : String => Boolean) : String => Boolean = x => !pred(x)
+
+  val notE = negMethod(empty) //type: String => Boolean
+  println(notE("foo") && !notE(""))
+
 }
