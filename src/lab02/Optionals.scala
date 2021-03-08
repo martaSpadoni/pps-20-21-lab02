@@ -32,12 +32,22 @@ object Optionals extends App {
       case _ => None()
     }
 
+    def map2[A,B,C](opt1: Option[A])(opt2: Option[B])(mapper: (A, B) => C): Option[C] = (opt1, opt2) match {
+      case (Some(a), Some(b)) => Some(mapper(a, b))
+      case _ => None()
+    }
+
   }
 
   import Option._
   val s1: Option[Int] = Some(1)
   val s2: Option[Int] = Some(2)
   val s3: Option[Int] = None()
+
+  val g = (x:Int, y:Int) => x > y match {
+    case true => "is greater"
+    case _ => "not is greater"
+  }
 
   println(s1) // Some(1)
   println(getOrElse(s1,0), getOrElse(s3,0)) // 1,0
@@ -51,5 +61,9 @@ object Optionals extends App {
 
   println(map(Some(5))(_ > 2))
   println(map(None[Int])(_ > 2))
+
+  println(map2(Some(5))(Some(3))(g))
+  println(map2(None[Int])(Some(5))(g))
+
 
 }
