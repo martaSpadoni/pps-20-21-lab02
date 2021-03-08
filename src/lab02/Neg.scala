@@ -29,5 +29,4 @@ object Neg extends App{
   println(lessThanFive(3)) //true
   println(lessThanFive(10)) //false
 
-
 }
