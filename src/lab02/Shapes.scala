@@ -1,7 +1,7 @@
 package lab02
 
 
-object Shape {
+object Shapes {
 
   sealed trait Shape
   object Shape {

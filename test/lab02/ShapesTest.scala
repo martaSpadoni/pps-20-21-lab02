@@ -3,8 +3,8 @@ package lab02
 import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
 
-class ShapeTest {
-  import Shape.Shape._
+class ShapesTest {
+  import Shapes.Shape._
 
   val rect = Rectangle(10.5, 30)
   val circle = Circle(11)
