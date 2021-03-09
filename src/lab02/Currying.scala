@@ -16,9 +16,10 @@ object Currying extends App {
   println(p3(3)(5)(7))//true
   println(p4(1,2,3)) //true
 
-  val fiveLessThan : Int => Int => Boolean = p1(5)
-  println(fiveLessThan(7)(8)) //true
+  val fiveIsLessThan : Int => Int => Boolean = p1(5)
+  println(fiveIsLessThan(7)(8)) //true
 
-  val lessThanTen : Int => Int => Boolean = x => y =>  p3(x)(y)(10)
-  println(lessThanTen(4)(12)) //false
+  val areBothLessThanTen : Int => Int => Boolean = x => y =>  p3(x)(y)(10)
+  println(areBothLessThanTen(4)(12)) //false
+
 }
