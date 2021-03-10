@@ -37,6 +37,10 @@ object Optionals extends App {
       case _ => None()
     }
 
+//    def doublesInt(opt: Option[Int]): Option[Int] =  map(opt)(_*2)
+//
+//    def invert(opt: Option[Boolean]):Option[Boolean] = map(opt)(!_)
+
   }
 
   import Option._
@@ -55,15 +59,15 @@ object Optionals extends App {
   println(flatMap(s1)(i => flatMap(s2)(j => Some(i+j)))) // Some(3)
   println(flatMap(s1)(i => flatMap(s3)(j => Some(i+j)))) // None
 
-  println(filter(Some(5))(_ > 2))
-  println(filter(Some(5))(_ > 8))
+  println(filter(Some(5))(_ > 2)) // Some(5)
+  println(filter(Some(5))(_ > 8)) // None()
   println(filter(Some("foo"))(_ == "bar")) //None()
 
-  println(map(Some(5))(_ > 2))
-  println(map(None[Int])(_ > 2))
+  println(map(Some(5))(_ > 2)) // Some(true)
+  println(map(None[Int])(_ > 2)) // None()
 
-  println(map2(Some(5))(Some(3))(g))
-  println(map2(None[Int])(Some(5))(g))
+  println(map2(Some(5))(Some(3))(g)) // Some("is greater")
+  println(map2(None[Int])(Some(5))(g)) // None()
 
 
 }
